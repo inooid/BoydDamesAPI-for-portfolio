@@ -10,6 +10,8 @@ Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 require 'shoulda/matchers'
 require 'awesome_print'
+require 'codeclimate-test-reporter'
+CodeClimate::TestReporter.start
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
