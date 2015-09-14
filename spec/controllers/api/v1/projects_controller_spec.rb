@@ -7,6 +7,10 @@ RSpec.describe Api::V1::ProjectsController, type: :controller do
     { title: Faker::Company.name, body: Faker::Lorem.paragraph }
   end
 
+  let(:invalid_attributes) do
+    { title: nil, body: nil }
+  end
+
   let!(:project) { Project.create(valid_attributes) }
 
   describe 'GET #index' do
@@ -38,17 +42,17 @@ RSpec.describe Api::V1::ProjectsController, type: :controller do
       end
     end
 
-    # context 'with invalid params' do
-    #   it 'assigns a newly created but unsaved project as @project' do
-    #     post :create, project: invalid_attributes, format: :json
-    #     expect(assigns(:project)).to be_a_new(Project)
-    #   end
+    context 'with invalid params' do
+      it 'assigns a newly created but unsaved project as @project' do
+        post :create, project: invalid_attributes, format: :json
+        expect(assigns(:project)).to be_a_new(Project)
+      end
 
-    #   it 'returns unprocessable_entity status' do
-    #     put :create, project: invalid_attributes
-    #     expect(response.status).to eq(422)
-    #   end
-    # end
+      it 'returns unprocessable_entity status' do
+        put :create, project: invalid_attributes
+        expect(response.status).to eq(422)
+      end
+    end
   end
 
   describe 'PUT #update' do
@@ -70,17 +74,17 @@ RSpec.describe Api::V1::ProjectsController, type: :controller do
       end
     end
 
-    # context 'with invalid params' do
-    #   it 'assigns the project as @project' do
-    #     put :update, id: project.id, project: invalid_attributes, format: :json
-    #     expect(assigns(:project)).to eq(project)
-    #   end
+    context 'with invalid params' do
+      it 'assigns the project as @project' do
+        put :update, id: project.id, project: invalid_attributes, format: :json
+        expect(assigns(:project)).to eq(project)
+      end
 
-    #   it 'returns unprocessable_entity status' do
-    #     put :update, id: project.id, project: invalid_attributes, format: :json
-    #     expect(response.status).to eq(422)
-    #   end
-    # end
+      it 'returns unprocessable_entity status' do
+        put :update, id: project.id, project: invalid_attributes, format: :json
+        expect(response.status).to eq(422)
+      end
+    end
   end
 
   describe 'DELETE #destroy' do
