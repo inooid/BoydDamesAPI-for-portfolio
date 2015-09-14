@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Api::V1::ProjectsController, type: :controller do
-  # This should return the minimal set of attributes required to create a valid
-  # Customer. As you add validations to Customer, be sure to
-  # adjust the attributes here as well.
+  it_behaves_like 'api_controller'
+
   let(:valid_attributes) do
     { title: Faker::Company.name, body: Faker::Lorem.paragraph }
   end
