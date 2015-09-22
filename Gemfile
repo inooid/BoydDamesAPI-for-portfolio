@@ -8,10 +8,14 @@ gem 'pg'
 # - API formatting ------------------------------------------------------------#
 gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
 
+# - Server --------------------------------------------------------------------#
+gem 'unicorn', '~> 4.9.0'
+
 # - Development ---------------------------------------------------------------#
 group :development do
   gem 'spring'
   gem 'spring-commands-rspec'
+  gem 'unicorn-rails'
 end
 
 # - Test ----------------------------------------------------------------------#
