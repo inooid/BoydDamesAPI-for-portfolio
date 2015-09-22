@@ -10,7 +10,7 @@ default: &default
   timeout: 5000
   encoding: unicode
   username: postgres
-  host: postgres
+  host: db
   port: 5432
 
 development:
@@ -25,6 +25,8 @@ test:
   <<: *default
   database: boyddames_api_test
   pool: 5
+  host: <%= ENV["DB_PORT_5432_TCP_ADDR"] %>
+  port: <%= ENV["DB_PORT_5432_TCP_PORT"] %>
 
 production:
   <<: *default
