@@ -1,6 +1,14 @@
-sudo: true
-install:
-  - curl -sLo - http://j.mp/install-travis-docker | sh -xe
+sudo: required
+language: ruby
+
+services:
+  - docker
+
+before_install:
+  - curl -L https://github.com/docker/compose/releases/download/1.4.0/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+
 script:
-  - ./run 'docker-compose build'
-  - ./run 'docker-compose up -d blog && docker ps'
+  - docker-compose build
+  - docker-compose run app rspec
