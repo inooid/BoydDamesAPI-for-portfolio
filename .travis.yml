@@ -3,10 +3,9 @@ language: ruby
 services:
   - docker
 before_install:
-  - curl -L https://github.com/docker/compose/releases/download/1.4.0/docker-compose-`uname -s`-`uname -m` > docker-compose
-  - chmod +x docker-compose
-  - sudo mv docker-compose /usr/local/bin
-  - sudo iptables -N DOCKER
-  - docker-compose build
+  - docker build -t 'boyddames-api' ./.
+  - docker run --name psql-db -d postgres:9.4
+  - docker run --rm --link psql-db:db boyddames-api rake db:create
+  - docker run --rm --link psql-db:db boyddames-api rake db:migrate
 script:
-  - docker-compose run app env "RAILS_ENV=test" rake
+  - docker run --rm --link psql-db:db boyddames-api rake
