@@ -7,7 +7,6 @@ MAINTAINER justdrawcats@gmail.com
 RUN apt-get update && apt-get install -y \
   build-essential \
   nodejs \
-  postgresql-common \
   postgresql-client
 
 # Configure the main working directory. This is the base
@@ -15,7 +14,6 @@ RUN apt-get update && apt-get install -y \
 # commands.
 RUN mkdir -p /app
 WORKDIR /app
-
 
 # Copy the Gemfile as well as the Gemfile.lock and install
 # the RubyGems. This is a separate step so the dependencies
