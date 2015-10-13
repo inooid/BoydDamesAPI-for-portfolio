@@ -3,7 +3,7 @@
 [![Code Climate](https://codeclimate.com/github/inooid/BoydDamesAPI-for-portfolio/badges/gpa.svg)](https://codeclimate.com/github/inooid/BoydDamesAPI-for-portfolio)
 [![Test Coverage](https://codeclimate.com/github/inooid/BoydDamesAPI-for-portfolio/badges/coverage.svg)](https://codeclimate.com/github/inooid/BoydDamesAPI-for-portfolio/coverage)
 [![Build Status](https://travis-ci.org/inooid/BoydDamesAPI-for-portfolio.svg?branch=master)](https://travis-ci.org/inooid/BoydDamesAPI-for-portfolio)
-[ ![Codeship Status for inooid/BoydDamesAPI-for-portfolio](https://codeship.com/projects/5c9ef120-4742-0133-4c99-066ef9c7f962/status?branch=master)](https://codeship.com/projects/105003)
+[ ![Codeship Status for inooid/BoydDamesAPI-for-portfolio](https://img.shields.io/codeship/5c9ef120-4742-0133-4c99-066ef9c7f962/master.svg)](https://codeship.com/projects/105003)
 
 Make sure that docker and docker-compose is installed before proceeding (more info later):
 
