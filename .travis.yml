@@ -7,8 +7,8 @@ before_install:
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
 script:
-  - env
-  - bash run_tests.sh
+  - docker-compose run app env
+  - docker-compose run app bash run_tests.sh
 
 addons:
   code_climate:
