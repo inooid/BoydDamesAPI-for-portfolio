@@ -1,8 +1,0 @@
-app:
-  build:
-    image: app
-    dockerfile_path: Dockerfile
-  links:
-    - db
-db:
-  image: postgres
