@@ -25,8 +25,6 @@ module Api
       end
 
       def update
-        @project = Project.find(params[:id])
-
         if @project.update(project_params)
           head :no_content
         else
